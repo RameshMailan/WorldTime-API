@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-// ignore: implementation_imports
-//import 'package:flutter/src/scheduler/binding.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -18,7 +16,6 @@ class _HomeState extends State<Home> {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       final arguments =
           (ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?);
-      //data.isNotEmpty ? data :
       if (arguments != null) {
         setState(() {
           data = arguments;
@@ -30,12 +27,11 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     bool isDayTime = data["isDayTime"] ?? false;
+
     //set background
     String bgImage = data["isDayTime"] ? "day.png" : "night.png";
-    //Color bgColor =  data["isDayTime"] ? Colors.blue.shade300 : Colors.indigo.shade900;
 
     return Scaffold(
-        // backgroundColor: bgColor,
         body: SafeArea(
       child: Container(
         decoration: BoxDecoration(
