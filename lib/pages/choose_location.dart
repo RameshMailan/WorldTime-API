@@ -9,16 +9,7 @@ class ChooseLocation extends StatefulWidget {
 }
 
 class _ChooseLocationState extends State<ChooseLocation> {
-  void getData() async {
-    //simulate network request for a username
-    // String username = await Future.delayed(Duration(seconds: 3), () {
-    //   return ("Ramesh");
-    // });
-    // //simulate network request to get bio of the user
-    // String bio = await Future.delayed(Duration(seconds: 2), () {
-    //   return ("Coder, Trader, Atheist and Stoicist");
-    // });
-  }
+  void getData() async {}
 
   @override
   void initState() {
@@ -52,7 +43,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
         backgroundColor: Colors.grey[200],
         appBar: AppBar(
           backgroundColor: Colors.blue[900],
-          title: Text("Choose a Location"),
+          title: const Text("Choose a Location"),
           centerTitle: true,
           elevation: 0,
         ),
@@ -65,7 +56,6 @@ class _ChooseLocationState extends State<ChooseLocation> {
                   child: ListTile(
                     onTap: () {
                       updateTime(index);
-                      // print("${locations[index].location}");
                     },
                     title: Text(locations[index].location),
                     leading: CircleAvatar(
